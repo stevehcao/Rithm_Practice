@@ -1,0 +1,22 @@
+.Lottery {
+  border: solid 1px black;
+  background-color: seashell;
+  padding: 0em 1.5em 1.5em 1.5em;
+  margin: 1em 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 70%;
+  height: 300px;
+}
+
+p {
+  margin: 0.5em;
+  color: blue;
+  font-size: 40px;
+  display: flex;
+}
+
+button {
+  display: flex;
+}
