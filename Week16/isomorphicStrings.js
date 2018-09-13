@@ -50,3 +50,26 @@ var isIsomorphic = function(s, t) {
 };
 
 console.log(isIsomorphic('ab', 'aa'));
+
+// model solution
+function isIsoModel(s, t) {
+  let ltrMap = {};
+  let values = new Set;
+  for (let i = 0; i < s.length; i++) {
+    let sLet = s[i];
+    let tLet = t[i];
+
+    // if letter in s is already mapped to a different letter in t
+    if (ltrMap[sLet] && ltrMap[sLet] !== tLet) return false;
+    
+    // letter in s isn't mapped yet, but letter in t is already taken
+    if (!ltrMap[sLet] && values.has(tLet)) return false;
+
+    // record new mapping, if there is one
+    ltrMap[sLet] = ltrMap[sLet] || tLet;
+    values.add(ltrMap[sLet]);
+  }
+  return true;
+}
+
+console.log(isIsoModel('ab', 'aa'));
