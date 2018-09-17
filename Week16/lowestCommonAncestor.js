@@ -41,23 +41,23 @@
  * @return {TreeNode}
  */
 
-var WORKINGONITlowestCommonAncestor = function(root, p, q) {
-  let current = root;
-  let minVal = Math.min(p.val, q.val);
-  let maxVal = Math.max(p.val, q.val);
-  
-  // loop and search
-  while (true) {
-      // check current node if it is less than or greater than min/max val
-      // follow certain path acccording to answer of your question
-      if (current.val < minVal.val) {
-          current = maxVal;
-      } else if (current.val > maxVal.val) {
-          current = minVal;
-      } else {
-          return current;
-      }
-  }
+var MODELlowestCommonAncestor = function(root, p, q) {
+    let current = root;
+    let minVal = Math.min(p.val, q.val);
+    let maxVal = Math.max(p.val, q.val);
+    
+    // loop and search
+    while (true) {
+        // check current node if it is less than or greater than min/max val
+        // follow certain path acccording to answer of your question
+        if (current.val < minVal) {
+            current = current.right;
+        } else if (current.val > maxVal) {
+            current = current.left;
+        } else {
+            return current;
+        }
+    }
 };
 
 

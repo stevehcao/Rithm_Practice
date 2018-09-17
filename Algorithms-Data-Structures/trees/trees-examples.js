@@ -1,3 +1,7 @@
+/**
+ * DFS uses a stack
+ * @param {object} rootNode 
+ */
 function DFS(rootNode) {
   // Check that a root node exists.
   if (rootNode === undefined) {
@@ -15,6 +19,11 @@ function DFS(rootNode) {
   }
 }
 
+/**
+ * 
+ * @param {object} rootNode 
+ * BFS uses a queue
+ */
 function BFS(rootNode) {
   // Check that a root node exists.
   if (rootNode === undefined) {
