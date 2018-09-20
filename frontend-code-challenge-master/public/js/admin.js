@@ -11,14 +11,33 @@ $(document).ready(() => {
         // users is [{firstName: steve, lastName: young}, {}, {}] iterate
         // iterate over array of objects to make a list of users
         for (let user of users) {
+          let firstName = user.firstName;
+          let lastName = user.lastName;
+          let email = user.email;
+          let id = user.id;
+          let state = user.state;
           let fullName = `${user.firstName} ${user.lastName}`
-          $('.userName-list').append(
-            `<li>${fullName}</li>`
+
+          $('.table-data').append(
+            `<tr>
+              <th scope="row">${id}</th>
+              <td>${firstName}</td>
+              <td>${lastName}</td>
+              <td>${email}</td>
+              <td>${state}</td>              
+            </tr>`
           )
+
+          // $('.userName-list').append(
+          //   `<li>${fullName}</li>`
+          // )
         }
       })
       .catch((err) => {
         console.log(err);
       })
+  }
+  function deleteUser() {
+    
   }
 })
