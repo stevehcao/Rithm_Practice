@@ -48,6 +48,6 @@ var isPalindrome = function(head) {
 
 // console.log(isPalindrome({ val: 1, next: { val: 2, next: null } }));
 // console.log(isPalindrome({ val: 1, next: null }));
-console.log(isPalindrome({ val: -129, next: { val: -129, next: null } }));
+console.log(isPalindrome({ val: 1, next: { val: 2, next: null } }));
 
 
