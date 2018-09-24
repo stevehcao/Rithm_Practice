@@ -50,4 +50,21 @@ var isPalindrome = function(head) {
 // console.log(isPalindrome({ val: 1, next: null }));
 console.log(isPalindrome({ val: 1, next: { val: 2, next: null } }));
 
+function isPalindromeMODEL(head) {
+    // create two empty strings
+    // iterate through linked list while head is true
+      // build strings forward and backwards
+      // move head to next
+    // check if both strings are equal
+    let foward = '';
+    let reverse = '';
+
+    while (head) {
+      foward += head.val;
+      reverse = head.val + reverse;
+      head = head.next;
+    }
+    return foward === reverse;
+}
+
 
