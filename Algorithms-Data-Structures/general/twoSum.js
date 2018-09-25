@@ -55,10 +55,18 @@ function twoSumMap(nums, target) {
    // look for match and return indices
   let HT = new Map();
   for (let i = 0; i < nums.length; i++) {
-    // .set and .get and .has
+    // .set(key, value);
+    // .get(key);
+    // .delete(key);
+    // .has(key);
+
     // (key, value)
     HT.set(nums[i], i);
   }
+  HT.entries();
+  HT.keys();
+  HT.values();
+  // 
 
   for (let j = 0; j < nums.length; j++) {
     let complement = target - nums[j];
