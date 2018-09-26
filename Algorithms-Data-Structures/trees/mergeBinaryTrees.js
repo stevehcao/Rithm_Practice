@@ -52,3 +52,20 @@ var mergeTrees = function(t1, t2) {
       }
     }
 };
+
+function mergeBinaryTrees(tree1, tree2) {
+   // use recursion to do a DFS
+    // base case
+    if (tree1 === null) {
+      return tree2;
+    }
+    if (tree2 === null) {
+      return tree1;
+    }
+    
+    tree1.val = tree1.val + tree2.val;
+    tree1.left = mergeTrees(tree1.left, tree2.left);
+    tree2.right = mergeTrees(tree1.right, tree2.right);
+    
+    return tree1;
+}
