@@ -67,4 +67,13 @@ function isPalindromeMODEL(head) {
     return foward === reverse;
 }
 
+function isPalindromeSTACK(head) {
+  // stack
+  // iterate through linked list
+  // build stack
+  // iterate trhough linked list
+    // pop stack and check against traversing the linked list
+  // tradeoff is that it takes more space
+}
+
 

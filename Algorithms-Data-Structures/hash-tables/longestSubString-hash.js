@@ -53,7 +53,7 @@ var lengthOfLongestSubstringNONWORKING = function(s) {
   return Math.max(currLeng, maxLeng);
 };
 
-function lengthOfLongestSubstring(str) {
+function lengthOfLongestSubstring1(str) {
   let left = 0;
   let right = 0;
 
@@ -78,7 +78,7 @@ function lengthOfLongestSubstring(str) {
 
 // console.log(lengthOfLongestSubstring("abcabcbb")); // 3
 // console.log(lengthOfLongestSubstring("pwwkew")); // 3
-console.log(lengthOfLongestSubstring('aab')); // 2
+console.log(lengthOfLongestSubstring1('aab')); // 2
 
 
 // MODEL
@@ -136,4 +136,36 @@ function lengthOfLongestSubstringMODEL2(s) {
   }
 
   return longest;
+}
+
+// assume valid input, strings only
+// looking for longest substring non repeating
+function lengthOfLongestSubstring(str) {
+  // keep track of length of max length;
+  // make a hash can use Set, built in .add(), .delete(), .has()
+  // make use of two pointers
+  // iterate over string
+    // check if character is not in hash
+    // add to hash
+    // move right pointer
+    // determine max length
+    // if it is in hash
+    // delete from hash
+    // move left pointer
+  let maxLeng = 0;
+  let left = 0;
+  let right = 0;
+  let hash = new Set();
+
+  while (left < str.length && right < str.length) {
+    if (!hash.has(str[right])) {
+      hash.add(str[right]);
+      right++;
+      maxLeng = Math.max(maxLeng, (right - left));
+    } else {
+      hash.delete(str[left]);
+      left++;
+    }
+  }
+  return maxLeng;
 }
