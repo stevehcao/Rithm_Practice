@@ -41,7 +41,7 @@ function BFS(rootNode) {
   }
 }
 
-function DFS(node) {
+function DFSrecurse(node) {
   if (node === undefined) {
     return;
   }

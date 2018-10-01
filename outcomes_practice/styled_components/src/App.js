@@ -55,7 +55,6 @@ class App extends Component {
         </StyledNav>
         {/* you can also just put primary it will be shorthand */}
         <StyledButton primary={true} onClick={this.handleClick}>
-          {' '}
           Primary button click me
         </StyledButton>
         <StyledButton> NOT PRIMARY </StyledButton>
