@@ -5,7 +5,7 @@
 /*  quick ES6 review 
   var, will allow you to reassign and redeclare the variables
   let, will only allow you to reassign but NOT redeclare
-  const, is a constant and you will NEVER be able to change this variable
+  const, is a constant and you will NEVER be able to redeclare this variable
 */
 
 // forgot to return the function!
