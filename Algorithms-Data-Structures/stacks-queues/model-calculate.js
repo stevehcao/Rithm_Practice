@@ -1,6 +1,6 @@
 /**
- * @param {string} s
- * @return {number}
+ * @param {String} s
+ * @return {Number}
  */
 var calculate = function(s) {
   let currentSegment = '';
