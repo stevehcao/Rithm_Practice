@@ -35,3 +35,4 @@ function findInt(A) {
 console.log(findInt([1, 2, 3]));
 console.log(findInt([-1, -3]));
 console.log(findInt([1, 3, 4, 5]));
+console.log(findInt([3, 4, 5]));

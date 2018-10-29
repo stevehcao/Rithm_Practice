@@ -52,6 +52,7 @@ function three(nums, target) {
   for (let i = 0; i < nums.length - 2; i++) {
     sum += two(nums, i + 1, target - nums[i]);
   }
+  return sum;
 }
 
 function two(nums, startIndex, target) {
@@ -79,23 +80,24 @@ function smaller(nums, target) {
   nums.sort((a, b) => a - b);
   if (nums.length === 3) {
     let sum = nums[0] + nums[1] + nums[2];
-    return sum === target ? 1 : 0;
+    return sum < target ? 1 : 0;
   }
 
   // loop over sorted array with 2 other pointers
   // two pointers on opposite end of array move accordingly if it's less than or more
-  for (let i = 0; i < nums.length - 3; i++) {
+  for (let i = 0; i < nums.length - 2; i++) {
     let left = i + 1;
     let right = nums.length - 1;
     while (left < right) {
       let sum = nums[i] + nums[left] + nums[right];
-      if (sum === target) {
-        count++;
+      //       console.log(right, "RIGHT");
+      if (sum < target) {
+        count += right - left;
         left++;
-        right--;
-      } else if (sum < target) left++;
-      else right--;
+      } else right--;
     }
   }
   return count;
 }
+
+smaller([-2, 0, 3, 1], 4); // 3
