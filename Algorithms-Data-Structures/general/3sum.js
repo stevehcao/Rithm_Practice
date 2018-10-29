@@ -22,21 +22,21 @@ function threeSum(nums) {
   nums.sort((a, b) => a - b);
 
   for (let i = 0; i < nums.length - 2; i++) {
+    if (nums[i] > 0) break;
+    if (i > 0 && nums[i] === nums[i - 1]) continue;
     let left = i + 1;
     let right = nums.length - 1;
     // check for duplicate first number!
-    if (i > 0 && nums[i] === nums[i - 1]) continue;
     while (left < right) {
-      // check for duplicate pattern inside loop
-      if (left - i > 1 && nums[left] === nums[left - i]) {
+      // check for duplicate triplets inside the loop
+      // these two check prevents you from having duplicate triplets
+      if (left - i > 1 && nums[left] === nums[left - 1]) {
         left++;
         continue;
       }
 
       let sum = nums[i] + nums[left] + nums[right];
       if (sum === 0) {
-        // a check if the triplet already exists
-
         triplets.push([nums[i], nums[left], nums[right]]);
         left++;
         right--;
@@ -51,3 +51,4 @@ function threeSum(nums) {
 }
 
 console.log(threeSum([-1, 0, 1, 2, -1, -4]));
+console.log(threeSum([1, -1, -1, 0]));
