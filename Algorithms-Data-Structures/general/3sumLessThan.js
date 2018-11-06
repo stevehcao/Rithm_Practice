@@ -47,29 +47,12 @@ function three(nums, target) {
   // store count of how many times a triplet sum is less than target number
   // sort array
   // iterate through array stopping 2 numbers before end
-  nums.sort((a, b) => a - b);
-  let sum = 0;
-  for (let i = 0; i < nums.length - 2; i++) {
-    sum += two(nums, i + 1, target - nums[i]);
-  }
-  return sum;
 }
 
-function two(nums, startIndex, target) {
+function two(nums, target) {
   // sum
   let sum = 0;
   // left pointer and right pointer of a sorted array
-  let left = startIndex;
-  let right = nums.length - 1;
-  while (left < right) {
-    if (nums[left] + nums[right] < target) {
-      sum += right - left;
-      left++;
-    } else {
-      right--;
-    }
-  }
-  return sum;
 }
 
 // time: O(n^2)
@@ -85,19 +68,16 @@ function smaller(nums, target) {
 
   // loop over sorted array with 2 other pointers
   // two pointers on opposite end of array move accordingly if it's less than or more
-  for (let i = 0; i < nums.length - 2; i++) {
+  for (let i = 0; i < nums.length - 3; i++) {
     let left = i + 1;
     let right = nums.length - 1;
     while (left < right) {
       let sum = nums[i] + nums[left] + nums[right];
-      //       console.log(right, "RIGHT");
       if (sum < target) {
-        count += right - left;
-        left++;
-      } else right--;
+        count++;
+        right--;
+      } else left++;
     }
   }
   return count;
 }
-
-smaller([-2, 0, 3, 1], 4); // 3
