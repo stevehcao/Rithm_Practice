@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <div class="wrapper">
+    <div id='id' class='elem'>Test</div>
+  </div>
+
+  <div id="elem1"></div>
+  <div id="elem2"></div> -->
+
+  <div class="wrapper">
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+  </div>
+
+  <style>
+  /* div{color: red;} 
+  .elem { color: green;}
+  .wrapper .elem { color: blue;}
+
+  #id {color: pink;}
+
+  #elem1 {box-sizing: border-box; background-color: blue;}
+  #elem2 {background-color: red;}
+
+  #elem1, #elem2 {
+    width: 50px;
+    height: 100px;
+    padding: 25px;
+  } */
+
+  .parent {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+  }
+
+  .child {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+  }
+
+  .wrapper > div {
+    background-color: magenta;;
+  }
+
+  </style>
+</body>
+</html>

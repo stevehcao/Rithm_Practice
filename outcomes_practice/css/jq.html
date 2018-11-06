@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="todos">
+    <div class="todo">Todo1</div>
+    <div class="todo">Todo2</div>
+    <div class="todo">Todo3</div>
+  </div>
+  <button id="btn">Add a Todo</button>
+
+</body>
+  <script>
+  $('#btn').click(function() {
+    $('.todos').append("<div class'todo'>New</div>");
+  });
+
+  function onTodoClick(cb) {
+    // ???
+  }
+  </script>
+</html>

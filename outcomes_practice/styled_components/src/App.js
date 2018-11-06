@@ -9,6 +9,7 @@ const PRIMARY_COLOR = 'cadetblue';
 const SECONDARY_COLOR = 'salmon';
 const StyledButton = styled.button`
   height: 60px;
+  margin: 1em;
   background-color: ${props =>
     props.primary ? PRIMARY_COLOR : SECONDARY_COLOR};
 `;
