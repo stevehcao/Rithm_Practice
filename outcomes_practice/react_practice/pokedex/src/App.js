@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Tweet from './Tweet';
 import './App.css';
+import Pokedex from './Pokedex';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Tweet username="Spiderman" date="Today" msg="React is fun!!!" />
+        <Pokedex />
       </div>
     );
   }

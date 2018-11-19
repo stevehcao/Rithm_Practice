@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
 // make a component
 
@@ -6,9 +7,18 @@ import React, { Component } from 'react';
   // can have state
   // can have default props
   // life cycle methods
+  static defaultProps = {
+    username: 'Steve'
+  };
 
   render() {
-    return <div>{/* something */}</div>;
+    return (
+      <div>
+        <div>{this.props.username}</div>
+        <div>{this.props.date}</div>
+        <div className="tweetConent">{this.props.msg}</div>
+      </div>
+    );
   }
 }
 
