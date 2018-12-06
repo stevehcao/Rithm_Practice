@@ -41,7 +41,7 @@ function oneWay(str1, str2) {
   return false;
 }
 
-// books way
+// MODEL METHOD replace
 function editReplace(str1, str2) {
   let foundDifference = false;
   // check to see if there is only ONE difference
@@ -59,8 +59,11 @@ function editReplace(str1, str2) {
 function editOneChar(str1, str2) {
   let idx1 = 0;
   let idx2 = 0;
+  // while idx does not exceed string length
   while (idx1 < str1.length && idx2 < str2.length) {
     if (str1[idx1] !== str2[idx2]) {
+      // if char is not the same AND idx not the same
+      // means that there has already been ONE insert or delete and this is the second time it happens return false
       if (idx1 !== idx2) {
         return false;
       }
