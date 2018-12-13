@@ -26,6 +26,12 @@ function KoiFish(name, color, size) {
   this.size = size;
 }
 
+/**
+ * 1) call my parent's constructor with my own context, and my arguments
+ * 2) create a new prototype using my parent's prototype
+ * 3) set my prototype to be based on my constructor
+ */
+
 // override the default prototype with one that is based on Animal.prototype
 KoiFish.prototype = Object.create(Animal.prototype);
 // but change the prototype's constructor function to reference KoiFish instead of Animal

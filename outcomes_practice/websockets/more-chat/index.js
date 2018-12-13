@@ -31,4 +31,10 @@ io.on('connection', function(socket) {
     // all different sockets connected
     io.sockets.emit('chat', data);
   });
+
+  // when server gets a "typing" emit server will listen and do a function!!!
+  // broadcasting example, it will send to every other client but the current socket
+  socket.on('typing', function(data) {
+    socket.broadcast.emit('typing', data);
+  });
 });
