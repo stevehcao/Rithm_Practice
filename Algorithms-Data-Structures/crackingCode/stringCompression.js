@@ -15,6 +15,8 @@
  * @param {String} str
  * run time is O(n^2) because of string concats on each iterations
  * try a string builder?
+ * Hey Steve - remember that strings are immutable in JS, so every time you're concatenating the language is creating
+ * a new string for you. This means that string operations can often be less efficient than they seem
  */
 function compress(str) {
   const lowercaseStr = str.toLowerCase();
