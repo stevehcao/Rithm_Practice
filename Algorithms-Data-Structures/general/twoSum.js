@@ -14,14 +14,14 @@
  * @param {number} target
  * @return {number[]}
  */
-let nums = [2, 7, 11, 15] 
-let target = 9
+let nums = [2, 7, 11, 15];
+let target = 9;
 
 // time: O(n);
 // space: O(1);
 var twoSumBruteForce = function(nums, target) {
   // iterate through each num twice and search for sum
-    // push to index arr
+  // push to index arr
   for (let i = 0; i < nums.length; i++) {
     for (let j = i + 1; j < nums.length; j++) {
       if (nums[i] + nums[j] === target) {
@@ -34,25 +34,10 @@ var twoSumBruteForce = function(nums, target) {
 
 console.log(twoSumBruteForce(nums, target));
 
-// not complete
-function twoSumAttempted(nums, target) {
-  // create hash table of index and difference
-  // iterate through nums again
-   // look for match and return indices
-  let hash = {};
-  for (let i = 0; i < nums.length; i++) {
-    hash[i] = nums[i];
-  }
-
-  for (let j = 0; j < nums.length; j++) {
-    if (nums[j] + )
-  }
-}
-
 function twoSumMap(nums, target) {
   // create hash table of index and difference
   // iterate through nums again
-   // look for match and return indices
+  // look for match and return indices
   let HT = new Map();
   for (let i = 0; i < nums.length; i++) {
     // .set(key, value);
@@ -66,12 +51,25 @@ function twoSumMap(nums, target) {
   HT.entries();
   HT.keys();
   HT.values();
-  // 
+  //
 
   for (let j = 0; j < nums.length; j++) {
     let complement = target - nums[j];
     if (HT.has(complement) && HT.get(complement) !== j) {
       return [j, HT.get(complement)];
+    }
+  }
+}
+
+function twoSum(arr, target) {
+  let hash = {};
+  let indexes = [];
+  for (let i = 0; i < arr.length; i++) {
+    let complement = target - arr[i];
+    if (arr[i] + complement === target && hash[complement] !== undefined) {
+      return [hash[complement], i];
+    } else {
+      hash[arr[i]] = i;
     }
   }
 }
