@@ -7,7 +7,7 @@ const express = require('express');
   app object we have previously been using.
 */
 const router = express.Router();
-const items = [];
+let items = [];
 let id = 1;
 
 router.get('', (req, res) => {
@@ -19,7 +19,7 @@ router.post('', (req, res) => {
   items.push({
     name: req.body.name,
     price: req.body.price,
-    id: ++id
+    id: id++
   });
   return res.json({ message: 'shopping item created' });
 });
@@ -31,5 +31,20 @@ router.get('/:id', (req, res) => {
   return res.json(item);
 });
 
+router.patch('/:id', (req, res) => {
+  // update a single item's name and/or price
+  // grab id by req.params.id and change items accordingly
+  const foundItem = items.find(val => val.id === Number(req.params.id));
+  foundItem.name = req.body.name ? req.body.name : foundItem.name;
+  foundItem.price = req.body.price ? req.body.price : foundItem.price;
+  // return request in JSON
+  return res.json(foundItem);
+});
+
+// delete
+router.delete('/:id', (req, res) => {
+  items = items.filter(item => item.id !== Number(req.params.id));
+  return res.json({ message: 'deleted item' });
+});
 // need to export so that app is made aware of routes
 module.exports = router;
